@@ -1,0 +1,94 @@
+*{
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 500;
+  margin: 0;
+
+}
+html, body{
+  height: 100%;
+  background: #874da2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+  background: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+}
+
+.App {
+  max-width: 500px;
+  width: 100%;
+  min-height: 400px;
+  margin: 70px auto;
+  padding: 20px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+  background: rgba(252, 229, 255, 0.9) !important;
+}
+
+h1{
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 650;
+  font-size: 28px;
+  color: rgb(60, 59, 59);
+  padding: 0px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+/*styles for create to do*/
+form{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+form input,
+form button{
+  flex: 7;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #7b1d8e;
+  border-top: 1px solid #7b1d8e;
+}
+form input{
+  border-left: 1px solid #7b1d8e;
+  padding: 8px;
+  background: #7b1d8e;
+  color: white;
+}
+
+form input:focus{
+  background: #812494;
+}
+
+form button{
+  flex: 1;
+  color: white;
+  background: #a948bc;
+  font-weight: bold;
+  font-size: 22px;
+  border-right: 1px solid #7b1d8e;
+  padding: 0px;
+  cursor: pointer;
+}
+
+form button:hover{
+  background: #b65dc8;
+}
+
+hr{
+  border: 0px;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  margin: 10px 0px;
+}
+
+ul li{
+  list-style: none;
+  margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.2)
+}
