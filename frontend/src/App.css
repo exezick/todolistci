@@ -15,11 +15,13 @@ html, body{
 .App {
   max-width: 500px;
   width: 100%;
-  min-height: 400px;
+  min-height: 300px;
   margin: 70px auto;
   padding: 20px;
+  padding-bottom: 40px;
   box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
   background: rgba(252, 229, 255, 0.9) !important;
+  border-bottom: 5px solid #7b1d8e;
 }
 
 h1{
@@ -29,7 +31,7 @@ h1{
   letter-spacing: 2px;
   font-weight: 650;
   font-size: 28px;
-  color: rgb(60, 59, 59);
+  color: #a74367;
   padding: 0px;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -90,5 +92,59 @@ ul li{
   padding: 10px;
   display: flex;
   background: rgba(255,255,255,0.8);
-  box-shadow: 0px 1px 3px rgba(0,0,0,0.2)
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+ul li .active{
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+ul li input,
+.row input{
+  margin-right: 5px;
+  transform: translateY(1px);
+}
+
+ul li button,
+.row button{
+  border: none;
+  outline: none;
+  color: white;
+  background: #f4407c;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+ul li button:hover,
+.row button:hover{
+  opacity: 0.8;
+}
+
+ul li button:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.row #delete{
+  background: crimson;
+}
+
+label{
+  cursor: pointer;
+}
+
+@media (max-width: 400px){
+  .App{
+    padding: 10px;
+  }
 }

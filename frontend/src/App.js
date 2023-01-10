@@ -14,6 +14,7 @@ function App() {
       <hr />
 
       <ul>
+        
         <li>
           <label htmlFor="">
             <input type="checkbox" id="" />
@@ -21,6 +22,7 @@ function App() {
           </label>
           <button>Edit</button>
         </li>
+        
       </ul>
 
       <div className="row">
