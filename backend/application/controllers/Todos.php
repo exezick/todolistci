@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Methods: GET, OPTIONS");
+header('Access-Control-Allow-Headers: *');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Credentials: true ");
+header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
 
 class Todos extends CI_Controller {
 
@@ -15,6 +17,7 @@ class Todos extends CI_Controller {
 
     public function index($todos='')
     {
+
         if($todos == "view"){
             echo $this->view();
         }
@@ -46,7 +49,17 @@ class Todos extends CI_Controller {
 
     public function create()
     {
-        echo 'create todo';
+        $this->load->helper('url');
+
+        $name	=	$this->input->post("name");
+        $response = $this->todos_model->save_todos($name);
+        if($response)
+        {
+            return json_encode($response);
+        }
+        else {
+            return  json_encode($response);
+        }
     }
 
     public function edit()

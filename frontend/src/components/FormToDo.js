@@ -2,20 +2,7 @@ import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 
 function FormToDo() {
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     const { value } = e.target.elements.todos
-        
-    //     setUsername(value)
-    //     axios.post('http://localhost/todolistci/backend/index.php/create', { name: value })
-    //     .then(function (response) {
-    //       console.log(response.config.data);
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     });
-    // }
-
+  
     const [formValue, setformValue] = React.useState({
       name: '',
     });
