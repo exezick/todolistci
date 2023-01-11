@@ -8,12 +8,10 @@ const FetchData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data: response } = await axios.get('https://localhost/todolistci/backend/');
+        const { data: response } = await axios.get('https://localhost/todolistci/backend/index.php/todos/view');
         setData(response);
-        console.log(response);
       } catch (error) {
         console.error(error);
-        console.log(data);
       }
       setLoading(false);
     };

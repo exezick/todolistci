@@ -15,7 +15,25 @@ class Todos extends CI_Controller {
 
     public function index($todos='')
     {
-       echo $this->view();
+        if($todos == "view"){
+            echo $this->view();
+        }
+        else if($todos == "create")
+        {
+            echo $this->create();
+        }
+        else if($todos == "edit")
+        {
+            echo $this->edit();
+        }
+        else if($todos == "remove")
+        {
+            echo $this->remove();
+        }
+        else {
+            echo 'Todos with codeigniter';
+        }
+       
     }
 
     public function view()
@@ -29,6 +47,16 @@ class Todos extends CI_Controller {
     public function create()
     {
         echo 'create todo';
+    }
+
+    public function edit()
+    {
+        echo 'edit todo';
+    }
+
+    public function remove()
+    {
+        echo 'delete todo';
     }
     
 }
