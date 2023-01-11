@@ -8,7 +8,7 @@ const FetchData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data: response } = await axios.get('https://localhost/todolistci/backend/index.php/todos/view');
+        const { data: response } = await axios.get('http://localhost/todolistci/backend/index.php/todos/view', { crossDomain: true });
         setData(response);
       } catch (error) {
         console.error(error);
