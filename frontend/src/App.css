@@ -105,7 +105,7 @@ ul li .active{
 
 ul li input,
 .row input{
-  margin-right: 5px;
+  margin-right: 10px;
   transform: translateY(1px);
 }
 

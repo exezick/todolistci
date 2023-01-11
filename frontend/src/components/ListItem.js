@@ -1,11 +1,11 @@
 import React from 'react'
 
-function ListItem() {
+function ListItem({name, complete}) {
   return (
     <li>
         <label htmlFor="">
             <input type="checkbox" id="" />
-            play dota 
+            {name}
         </label>
         <button>Edit</button>
     </li>
