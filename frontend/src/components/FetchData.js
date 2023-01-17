@@ -5,23 +5,29 @@ const FetchData = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data: response } = await axios.get('http://localhost/todolistci/backend/index.php/todos/view', { crossDomain: true });
-        setData(response);
-      } catch (error) {
-        console.error(error);
-      }
-      setLoading(false);
-    };
+  const fetchData = async () => {
+    try {
+      const { data: response } = await axios.get(
+        "http://localhost/todolistci/backend/index.php/todos/view",
+        { crossDomain: true }
+      );
+      setData(response);
+    } catch (error) {
+      console.error(error);
+    }
+    setLoading(false);
+  };
 
-    fetchData();
-  }, []);
+  const mutate = () => fetchData();
+
+  useEffect(() => {
+    fetchData()
+  }, [data]);
 
   return {
     data,
     loading,
+    mutate,
   };
 };
 

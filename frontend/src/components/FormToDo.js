@@ -1,14 +1,18 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import FetchData from './FetchData';
 
 function FormToDo() {
+    const {
+      mutate,
+    } = FetchData();
   
     const [formValue, setformValue] = useState({
       name: '',
     });
 
     const handleSubmit = async(e) => {
-      //e.preventDefault();
+      e.preventDefault();
       // store the states in the form data
       const nameFormData = new FormData();
       nameFormData.append("name", formValue.name)
@@ -27,8 +31,9 @@ function FormToDo() {
 
       //empty the text field
       setformValue({name: ''});
-      
-      //update data here ?
+
+      //load the udpdated data from fetchdata
+      mutate();
     }
   
     const handleChange = (event) => {

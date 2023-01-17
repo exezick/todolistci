@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ListItem from './ListItem'
 import FetchData from './FetchData';
 
@@ -12,9 +12,9 @@ function List() {
     <ul>
       {loading && <div>Loading</div>}
       {!loading && (
-        <div>
-          {data.map(item => (<ListItem key={item.id} name={item.name} complete={item.complete}  />))}
-        </div>
+        <>
+          {data.map(item => (<ListItem key={item.id} id={item.id} name={item.name} complete={item.complete} />))}
+        </>
       )}
     </ul>
   )
