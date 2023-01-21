@@ -4,14 +4,15 @@ import FetchData from './FetchData';
 
 function FormToDo() {
     const {
-      mutate,
+      loading
     } = FetchData();
-  
+
     const [formValue, setformValue] = useState({
       name: '',
     });
 
     const handleSubmit = async(e) => {
+      loading.current = true;
       e.preventDefault();
       // store the states in the form data
       const nameFormData = new FormData();
@@ -31,9 +32,7 @@ function FormToDo() {
 
       //empty the text field
       setformValue({name: ''});
-
-      //load the udpdated data from fetchdata
-      mutate();
+      
     }
   
     const handleChange = (event) => {

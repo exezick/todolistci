@@ -12,7 +12,7 @@ function Footer() {
           <input type="checkbox" name="all" id="all" />
           All
         </label>
-        <p>You have {data.length} to do</p>
+        <p>You have {data?.length} to do</p>
         <button id="delete">Delete</button>
     </div>
   )

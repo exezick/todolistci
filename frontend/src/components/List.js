@@ -5,17 +5,28 @@ import FetchData from './FetchData';
 function List() {
   const {
     data,
-    loading,
+    loading
   } = FetchData();
+
+  useEffect(() => {
+    console.log(data, loading.current, 'fran')
+  }, [data, loading.current])
 
   return (
     <ul>
       {loading && <div>Loading</div>}
-      {!loading && (
+      {console.log(data, loading)}
+      {!loading.current && (
         <>
           {data.map(item => (<ListItem key={item.id} id={item.id} name={item.name} complete={item.complete} />))}
         </>
       )}
+      {/* {data.length > 0 ? 
+        <>
+          {data.map(item => (<ListItem key={item.id} id={item.id} name={item.name} complete={item.complete} />))}
+        </> :
+        <div>Loading</div>
+      } */}
     </ul>
   )
 }

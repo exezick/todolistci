@@ -1,33 +1,38 @@
-import { useEffect, useState} from 'react';
+import { useEffect, useMemo, useRef, useState} from 'react';
 import axios from 'axios';
 
 const FetchData = () => {
   const [data, setData] = useState({});
-  const [loading, setLoading] = useState(true);
-
-  const fetchData = async () => {
-    try {
-      const { data: response } = await axios.get(
-        "http://localhost/todolistci/backend/index.php/todos/view",
-        { crossDomain: true }
-      );
-      setData(response);
-    } catch (error) {
-      console.error(error);
-    }
-    setLoading(false);
-  };
-
-  const mutate = () => fetchData();
+  const loading = useRef(true);
 
   useEffect(() => {
-    fetchData()
-  }, [data]);
+    const fetchData = async () => {
+      let dat = [];
+      try {
+        const { data: response } = await axios.get(
+          "http://localhost/todolistci/backend/index.php/todos/view",
+          { crossDomain: true }
+        );
+        response.map((x) => {
+          return dat.push(x)
+        })
+      } catch (error) {
+        console.error(error);
+      }
+      setData(dat);
+    };
 
+    if(loading.current){
+      fetchData();
+      loading.current = false;
+    }
+    
+  },[data, loading.current]);
+
+  // console.log(data, loading.current, 'francis')
   return {
     data,
     loading,
-    mutate,
   };
 };
 
